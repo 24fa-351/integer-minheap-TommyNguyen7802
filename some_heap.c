@@ -57,7 +57,9 @@ heap_value_t heap_remove_min(heap_t *heap)
 {
     if (heap_size(heap) == 0)
     {
-        return NULL;
+        heap_value_t not_present;
+        not_present.as_int = KEY_NOT_PRESENT;
+        return not_present;
     }
     heap_value_t min = heap->data[0].value;
 

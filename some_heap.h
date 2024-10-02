@@ -2,8 +2,13 @@
 #define HEAP_H
 
 typedef unsigned long long heap_key_t;
-typedef void* heap_value_t;
 #define HEAP_KEY_FORMAT "%llu"
+
+typedef union heap_val
+{
+    unsigned long long as_int;
+    void *as_ptr;
+} heap_value_t;
 
 typedef struct
 {
